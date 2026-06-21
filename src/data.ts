@@ -1,7 +1,6 @@
 import { FaServer } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { DiPhotoshop } from "react-icons/di";
-import edo_state from "./assets/EDO-STATE-GOVT..jpg";
 import game_hub from "./assets/game_hub.jpg";
 import digit_home from "./assets/digit_home.png";
 import dog_nation from "./assets/dog_nation.png"

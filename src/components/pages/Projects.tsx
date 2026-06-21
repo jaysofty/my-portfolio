@@ -23,7 +23,9 @@ type Project = {
   name: string;
   description: string;
   image_path: string;
-  link?: string;
+  category?: string;
+  live_url?: string;
+  github_url?: string;
   tech?: string[];
 };
 
@@ -103,19 +105,32 @@ const Projects = () => {
             </CardBody>
 
             {/* Footer */}
-            {project.link && (
-              <CardFooter pt={0}>
-                <Link
-                  href={project.link}
-                  isExternal
-                  fontSize="sm"
-                  fontWeight="medium"
-                  color="purple.400"
-                >
-                  View Project →
-                </Link>
-              </CardFooter>
-            )}
+            <CardFooter pt={0}>
+              <Stack direction="row" spacing={4}>
+                {project.live_url && (
+                  <Link
+                    href={project.live_url}
+                    isExternal
+                    color="purple.400"
+                    fontSize="sm"
+                    fontWeight="medium"
+                  >
+                    Live Demo →
+                  </Link>
+                )}
+
+                {project.github_url && (
+                  <Link
+                    href={project.github_url}
+                    isExternal
+                    color="gray.500"
+                    fontSize="sm"
+                  >
+                    GitHub →
+                  </Link>
+                )}
+              </Stack>
+            </CardFooter>
           </MotionCard>
         ))}
       </SimpleGrid>

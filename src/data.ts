@@ -2,10 +2,10 @@ import { FaServer } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { DiPhotoshop } from "react-icons/di";
 import edo_state from "./assets/EDO-STATE-GOVT..jpg";
-import reminder from "./assets/reminder.jpg";
 import game_hub from "./assets/game_hub.jpg";
 import digit_home from "./assets/digit_home.png";
-import port_folio from "./assets/port.png";
+import dog_nation from "./assets/dog_nation.png"
+import makeup_port_folio from "./assets/makeup_logo.png";
 export const about = [
   {
     id: 1,
@@ -70,24 +70,17 @@ export const skill = [
 export const projects = [
   {
     id: 1,
-    name: "Portfolio website",
+    name: "Dog Marketplace",
     description:
-      "My Portofolio website that shows my experience, a bio about me and also a list of some of my projects",
-    image_path: port_folio,
-    github_url: "https://gitlab.com/kunlele.kunzy/my-portfolio.git",
+      "A simple dog market place app for buying dog items",
+    category: "Nextjs",
+    image_path: dog_nation,
+    github_url: "https://github.com/jaysofty/dogs_nation",
+    live_url: "https://dogs-nation.vercel.app/",
   },
+ 
   {
     id: 2,
-    name: "Reminder App",
-    description:
-      "This App Adds And Deletes List of Todos with a time and date Tracker youll keep your schedule organized",
-    category: "react",
-    image_path: reminder,
-    github_url: "https://github.com/kunzyJames/reminder-app",
-    // deployed_url: "https://devxandercode.github.io/covid-19-tracker/",
-  },
-  {
-    id: 3,
     name: "Game-Hub",
     description:
       "A game Web App with Rawg Api built with Typescript and Reactjs",
@@ -97,23 +90,34 @@ export const projects = [
     // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
   },
 
+  // {
+  //   id: 3,
+  //   name: "Edo State Educational Management App",
+  //   description: "A Control management system for Edo State Edu",
+  //   category: "Reactjs",
+  //   image_path: edo_state,
+  //   gith_url: "https://github.com/jaysofty?tab=repositories",
+  //   // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
+  // },
   {
-    id: 4,
-    name: "Edo State Educational Management App",
-    description: "A Control management system for Edo State Edu",
-    category: "Typescript",
-    image_path: edo_state,
-    url: "https://gitlab.com/kunlele.kunzy/stripe-checkout.git",
-    // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
-  },
-  {
-    id: 5,
+    id: 3,
     name: "Digit Home Real Estate App",
     description:
       "Digit Home is a private real estate firm created to connect land/house owners by solving change and exchange of properties",
-    category: "Typescript",
+    category: "Reactjs",
     image_path: digit_home,
-    github_url: "https://digithomeltd.com/handymen",
+    live_url: "https://digithomeltd.com/handymen",
     // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
+  },
+  {
+    id: 4,
+    name: "Makeup and Gele Website",
+    description:
+      "Simple Makeup portfolio showcasing artistry",
+    category: "ReactJs && Typescript",
+    image_path: makeup_port_folio,
+    github_url:  "https://github.com/jaysofty/makeup-portfolio",
+    live_url: "https://makeup-portfolio-kohl.vercel.app/",
+  
   },
 ];

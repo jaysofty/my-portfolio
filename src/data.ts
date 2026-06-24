@@ -92,7 +92,7 @@ export const projects = [
 
   {
     id: 3,
-    name: "Edo State Educational Management App",
+    name: "AI Expense Tracker System",
     description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
     category: "Reactjs",
     image_path: ai_expense,

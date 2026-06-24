@@ -2,7 +2,7 @@ import { FaServer } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { DiPhotoshop } from "react-icons/di";
 import game_hub from "./assets/game_hub.jpg";
-import digit_home from "./assets/digit_home.png";
+import tech_crush_ui from "./assets/tech_crush_ui.png";
 import dog_nation from "./assets/dog_nation.png"
 import makeup_port_folio from "./assets/makeup_logo.png";
 export const about = [
@@ -100,13 +100,13 @@ export const projects = [
   // },
   {
     id: 3,
-    name: "Digit Home Real Estate App",
+    name: "Reusable UI login and dashboard page",
     description:
-      "Digit Home is a private real estate firm created to connect land/house owners by solving change and exchange of properties",
-    category: "Reactjs",
-    image_path: digit_home,
-    live_url: "https://digithomeltd.com/handymen",
-    // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
+      "This UI page consist of a login page, settings page and a dashboard fully responsive and protected with middleware",
+    category: "Nextjs",
+    image_path: tech_crush_ui,
+    live_url: "https://reusable-ui-zeta.vercel.app/dashboard/settings",
+     github_url: "https://github.com/jaysofty/reusable-ui",
   },
   {
     id: 4,

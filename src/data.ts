@@ -85,7 +85,7 @@ export const projects = [
       "A game Web App with Rawg Api built with Typescript and Reactjs",
     category: "Typescript",
     image_path: game_hub,
-    github_url: "https://github.com/kunzyJames/game-hub",
+    github_url: "https://github.com/jaysofty/gameapp",
     // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
   },
 

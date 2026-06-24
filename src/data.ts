@@ -5,6 +5,7 @@ import game_hub from "./assets/game_hub.jpg";
 import tech_crush_ui from "./assets/tech_crush_ui.png";
 import dog_nation from "./assets/dog_nation.png"
 import makeup_port_folio from "./assets/makeup_logo.png";
+import ai_expense from "./assets/ai_expense.png"
 export const about = [
   {
     id: 1,
@@ -89,15 +90,15 @@ export const projects = [
     // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
   },
 
-  // {
-  //   id: 3,
-  //   name: "Edo State Educational Management App",
-  //   description: "A Control management system for Edo State Edu",
-  //   category: "Reactjs",
-  //   image_path: edo_state,
-  //   gith_url: "https://github.com/jaysofty?tab=repositories",
-  //   // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
-  // },
+  {
+    id: 3,
+    name: "Edo State Educational Management App",
+    description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
+    category: "Reactjs",
+    image_path: ai_expense,
+    live_url: "https://expense-tracker-system-3qz5cb5r4-jaysoftys-projects.vercel.app/",
+    gith_url: "https://github.com/jaysofty?tab=repositories",
+  },
   {
     id: 3,
     name: "Reusable UI login and dashboard page",

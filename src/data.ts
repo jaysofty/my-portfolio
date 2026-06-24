@@ -97,10 +97,10 @@ export const projects = [
     category: "Reactjs",
     image_path: ai_expense,
     live_url: "https://expense-tracker-system-3qz5cb5r4-jaysoftys-projects.vercel.app/",
-    gith_url: "https://github.com/jaysofty?tab=repositories",
+    gith_url: "https://github.com/jaysofty/expense_tracker_system",
   },
   {
-    id: 3,
+    id: 4,
     name: "Reusable UI login and dashboard page",
     description:
       "This UI page consist of a login page, settings page and a dashboard fully responsive and protected with middleware",
@@ -110,7 +110,7 @@ export const projects = [
      github_url: "https://github.com/jaysofty/reusable-ui",
   },
   {
-    id: 4,
+    id: 5,
     name: "Makeup and Gele Website",
     description:
       "Simple Makeup portfolio showcasing artistry",

@@ -97,7 +97,7 @@ export const projects = [
     category: "Reactjs",
     image_path: ai_expense,
     live_url: "https://expense-tracker-system-3qz5cb5r4-jaysoftys-projects.vercel.app/",
-    gith_url: "https://github.com/jaysofty/expense_tracker_system",
+    github_url: "https://github.com/jaysofty/expense_tracker_system",
   },
   {
     id: 4,

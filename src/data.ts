@@ -1,9 +1,7 @@
 import { FaServer } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { DiPhotoshop } from "react-icons/di";
-import game_hub from "./assets/game_hub.jpg";
 import tech_crush_ui from "./assets/tech_crush_ui.png";
-import dog_nation from "./assets/dog_nation.png"
 import makeup_port_folio from "./assets/makeup_logo.png";
 import ai_expense from "./assets/ai_expense.png"
 export const about = [

@@ -68,30 +68,10 @@ export const skill = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    name: "Dog Marketplace",
-    description:
-      "A simple dog market place app for buying dog items",
-    category: "Nextjs",
-    image_path: dog_nation,
-    github_url: "https://github.com/jaysofty/dogs_nation",
-    live_url: "https://dogs-nation.vercel.app/",
-  },
- 
-  {
-    id: 2,
-    name: "Game-Hub",
-    description:
-      "A game Web App with Rawg Api built with Typescript and Reactjs",
-    category: "Typescript",
-    image_path: game_hub,
-    github_url: "https://github.com/jaysofty/gameapp",
-    // deployed_url: "https://my-portfolio-website-react.herokuapp.com/",
-  },
+  
 
   {
-    id: 3,
+    id: 1,
     name: "AI Expense Tracker System",
     description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
     category: "Reactjs",
@@ -100,17 +80,17 @@ export const projects = [
     github_url: "https://github.com/jaysofty/expense_tracker_system",
   },
   {
-    id: 4,
+    id: 2,
     name: "Reusable UI login and dashboard page",
     description:
-      "This UI page consist of a login page, settings page and a dashboard fully responsive and protected with middleware",
+      "This is a Demo UI that consist of a login page, settings page and a dashboard fully responsive no authentication has been applied login and enjoy the view.",
     category: "Nextjs",
     image_path: tech_crush_ui,
     live_url: "https://reusable-ui-zeta.vercel.app/dashboard/settings",
      github_url: "https://github.com/jaysofty/reusable-ui",
   },
   {
-    id: 5,
+    id: 3,
     name: "Makeup and Gele Website",
     description:
       "Simple Makeup portfolio showcasing artistry",

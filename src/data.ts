@@ -96,7 +96,7 @@ export const projects = [
     description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
     category: "Reactjs",
     image_path: ai_expense,
-    live_url: "https://expense-tracker-system-3qz5cb5r4-jaysoftys-projects.vercel.app/",
+    live_url: "https://expense-tracker-system-six.vercel.app/",
     github_url: "https://github.com/jaysofty/expense_tracker_system",
   },
   {

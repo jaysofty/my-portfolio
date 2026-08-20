@@ -38,7 +38,6 @@ const skills = [
   { name: "GitHub Actions", level: 80, category: "Tools" },
   { name: "CI/CD", level: 80, category: "Tools" },
   { name: "Git", level: 85, category: "Tools" },
-  { name: "Postman", level: 80, category: "Tools" },
   { name: "Nginx", level: 75, category: "Tools" },
   { name: "Python", level: 65, category: "Programming" },
   { name: "Blockchain", level: 60, category: "Emerging Tech" },

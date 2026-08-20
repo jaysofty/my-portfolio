@@ -19,9 +19,9 @@ import { routeAnimation, fadeInUp } from "../../animation";
 const MotionBox = motion(Box);
 
 const Education = () => {
-  const cardBg = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
-  const textColor = useColorModeValue("gray.600", "gray.300");
+  const cardBg = useColorModeValue("white", "gray.900");
+  const borderColor = useColorModeValue("gray.200", "whiteAlpha.200");
+  const textColor = useColorModeValue("gray.600", "gray.400");
 
   return (
     <MotionBox
@@ -51,11 +51,9 @@ const Education = () => {
             borderColor={borderColor}
             borderRadius="xl"
             overflow="hidden"
-            boxShadow="md"
-            transition="0.3s"
-            _hover={{
-              boxShadow: "lg",
-            }}
+            boxShadow="sm"
+            whileHover={{ y: -2 }}
+            transition={{ duration: 0.2 }}
           >
             {/* Header */}
             <AccordionButton
@@ -74,10 +72,13 @@ const Education = () => {
                   direction={{ base: "column", sm: "row" }}
                   mt={2}
                   spacing={3}
+                  align={{ base: "flex-start", sm: "center" }}
                 >
-                  <Badge colorScheme="purple">Software Engineering</Badge>
+                  <Badge colorScheme="blue" borderRadius="full" px={3} py={0.5}>
+                    Software Engineering
+                  </Badge>
 
-                  <Text fontSize="sm" color={textColor}>
+                  <Text fontSize="sm" color={textColor} fontWeight="medium">
                     Aptech E-Learning
                   </Text>
                 </Stack>
@@ -93,7 +94,8 @@ const Education = () => {
                 experience because it exposed me to concepts I never knew
                 existed.
                 <br />
-                <br />I studied Advanced Diploma in Software Engineering, where
+                <br />
+                I studied Advanced Diploma in Software Engineering, where
                 I discovered my passion for design and web development. This
                 experience accelerated my journey as a Frontend Developer and
                 helped me develop stronger problem-solving and logical thinking

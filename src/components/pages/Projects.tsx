@@ -33,7 +33,8 @@ const MotionBox = motion(Box);
 const MotionCard = motion(Card);
 
 const Projects = () => {
-  const cardBg = useColorModeValue("white", "gray.800");
+  const cardBg = useColorModeValue("white", "gray.900");
+  const borderColor = useColorModeValue("gray.200", "whiteAlpha.200");
   const textMuted = useColorModeValue("gray.600", "gray.400");
 
   return (
@@ -42,8 +43,7 @@ const Projects = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      px={{ base: 4, md: 12 }}
-      py={8}
+      py={6}
     >
       {/* Header */}
       <Heading
@@ -57,49 +57,51 @@ const Projects = () => {
       </Heading>
 
       {/* Grid */}
-      <SimpleGrid columns={{ base: 1, lg: 2 }} // 1 column on mobile, 2 columns on large screens
-  spacing={8}>
+      <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8}>
         {projects.map((project: Project) => (
           <MotionCard
             key={project.id}
             variants={fadeInUp}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2 }}
             bg={cardBg}
+            variant="outline"
+            borderColor={borderColor}
             borderRadius="xl"
             overflow="hidden"
-            borderWidth="1px"
-            boxShadow="md"
-            // 1. Change to flex-row to put image and content side-by-side
+            boxShadow="sm"
             display="flex"
-            flexDirection={{ base: "column", md: "row" }} // Stack on mobile, row on tablet+
+            flexDirection={{ base: "column", md: "row" }}
           >
-            {/* Image: Fixed width on desktop, full width on mobile */}
-            <Box w={{ base: "100%", md: "35%" }} overflow="hidden" aspectRatio={{ base: 16/9, md: "auto" }}>
+            {/* Image Container */}
+            <Box w={{ base: "100%", md: "40%" }} overflow="hidden" position="relative">
               <Image
                 src={project.image_path}
                 alt={project.name}
                 w="100%"
-                h={{ base: "200px", md: "100%" }} // Taller on mobile, full height on desktop
+                h={{ base: "200px", md: "100%" }}
                 objectFit="cover"
-                transition="0.3s ease"
+                transition="transform 0.3s ease"
                 _hover={{ transform: "scale(1.05)" }}
               />
             </Box>
 
-            {/* Content: Flex-grow to fill the remaining space */}
-            <Box flex="1" display="flex" flexDirection="column">
-              <CardBody>
+            {/* Content Container */}
+            <Box flex="1" display="flex" flexDirection="column" justifyContent="space-between">
+              <CardBody pb={2}>
                 <Stack spacing={3}>
-                  <Heading size="md">{project.name}</Heading>
+                  <Heading size="md" color={fontColors.secondary}>
+                    {project.name}
+                  </Heading>
                   <Text fontSize="sm" color={textMuted} noOfLines={3}>
                     {project.description}
                   </Text>
 
-                  {/* Tech stack */}
+                  {/* Tech stack tags */}
                   {project.tech?.length && (
-                    <Stack direction="row" spacing={2} wrap="wrap">
+                    <Stack direction="row" spacing={1.5} wrap="wrap" pt={1}>
                       {project.tech.map((t) => (
-                        <Badge key={t} colorScheme="purple" fontSize="0.7em">
+                        <Badge key={t} colorScheme="blue" variant="subtle" fontSize="0.7em" borderRadius="full" px={2.5} py={0.5}>
                           {t}
                         </Badge>
                       ))}
@@ -108,16 +110,18 @@ const Projects = () => {
                 </Stack>
               </CardBody>
 
-              <CardFooter pt={0}>
+              <CardFooter pt={0} pb={4}>
                 <Stack direction="row" spacing={4}>
                   {project.live_url && (
                     <Link
                       href={project.live_url}
                       isExternal
-                      color="purple.400"
+                      color="blue.500"
                       fontSize="sm"
+                      fontWeight="semibold"
+                      _hover={{ textDecoration: "underline" }}
                     >
-                      Live Demo →
+                      Live Demo &rarr;
                     </Link>
                   )}
                   {project.github_url && (
@@ -126,8 +130,10 @@ const Projects = () => {
                       isExternal
                       color="gray.500"
                       fontSize="sm"
+                      fontWeight="semibold"
+                      _hover={{ textDecoration: "underline" }}
                     >
-                      GitHub →
+                      GitHub &rarr;
                     </Link>
                   )}
                 </Stack>

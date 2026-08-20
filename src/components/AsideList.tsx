@@ -1,21 +1,24 @@
 import {
   List,
   ListItem,
-  WrapItem,
   Avatar,
   Heading,
   Link,
   ListIcon,
   Button,
+  VStack,
   HStack,
+  Box,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCheckCircle, MdSettings, MdEmail } from "react-icons/md";
 import { FcAbout } from "react-icons/fc";
 import { BsBook } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { GiTie } from "react-icons/gi";
-import resume from "../assets/Updated Resume.pdf";
+import resume from "../assets/Adekunle_James_Professional_Resume.pdf";
 import { motion } from "framer-motion";
 import avatar from "../assets/avatar.jpg";
 import {
@@ -23,150 +26,166 @@ import {
   AiFillLinkedin,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { fontColors } from "../theme";
 
 interface NavItemProps {
   activeItem: string;
-  setActiveItem: (item: string) => void;
   name: string;
   route: string;
 }
 
 const NavItem = ({ activeItem, name, route }: NavItemProps) => {
-  return activeItem !== name ? <Link href={route}>{name}</Link> : null;
+  const isActive = activeItem === name;
+  const activeColor = useColorModeValue("blue.600", "blue.300");
+  const hoverBg = useColorModeValue("gray.100", "whiteAlpha.100");
+
+  return (
+    <Link
+      href={route}
+      style={{ textDecoration: "none" }}
+      w="full"
+    >
+      <Box
+        px={4}
+        py={2.5}
+        borderRadius="md"
+        bg={isActive ? hoverBg : "transparent"}
+        color={isActive ? activeColor : "inherit"}
+        fontWeight={isActive ? "bold" : "medium"}
+        _hover={{ bg: hoverBg, color: activeColor }}
+        transition="all 0.2s ease"
+      >
+        {name}
+      </Box>
+    </Link>
+  );
 };
 
 const AsideList = () => {
-  const [activeItem, setActiveItem] = useState<string>("");
+  const [activeItem, setActiveItem] = useState<string>("About");
+  const borderColor = useColorModeValue("gray.200", "whiteAlpha.200");
+  const cardBg = useColorModeValue("white", "gray.900");
+
+  // Sync active item based on current URL path on load/route change
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path.includes("education")) {
+      setActiveItem("Education");
+    } else if (path.includes("projects")) {
+      setActiveItem("Projects");
+    } else if (path.includes("services")) {
+      setActiveItem("Services");
+    } else {
+      setActiveItem("About");
+    }
+  }, []);
 
   return (
-    <>
-      <motion.div
-        animate={{
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 270, 270, 0],
-          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-        }}
-      >
-        <List
-          spacing={3}
-          paddingLeft={3}
-          paddingY="5px"
-          color={fontColors.secondary}
+    <Box
+      as={motion.div}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+      bg={cardBg}
+      h="full"
+      borderRight="1px solid"
+      borderColor={borderColor}
+      p={6}
+      overflowY="auto"
+    >
+      <VStack spacing={6} align="center">
+        {/* Avatar with subtle modern ring */}
+        <Box
+          position="relative"
+          _after={{
+            content: '""',
+            position: "absolute",
+            bottom: "2px",
+            right: "2px",
+            w: "16px",
+            h: "16px",
+            bg: "green.400",
+            border: "3px solid",
+            borderColor: cardBg,
+            borderRadius: "full",
+          }}
         >
-          <WrapItem>
-            <Avatar size="2xl" name="Abowaba Adekunle" src={avatar} />{" "}
-          </WrapItem>
-          <ListItem>
-            <Heading
-              whiteSpace={"nowrap"}
-              as="h1"
-              fontSize="2xl"
-              marginBottom={10}
-              paddingY={"2.5"}
-            >
-              Abowaba Adekunle
-            </Heading>
+          <Avatar
+            size="xl"
+            name="Abowaba Adekunle"
+            src={avatar}
+            boxShadow="md"
+          />
+        </Box>
 
-            <ListIcon as={FcAbout} color="blue.500" />
-            <NavItem
-              setActiveItem={setActiveItem}
-              name="About"
-              route="/"
-              activeItem={activeItem}
-            />
+        <VStack spacing={1} textAlign="center">
+          <Heading as="h1" fontSize="xl" fontWeight="bold">
+            Abowaba Adekunle
+          </Heading>
+          <Text fontSize="sm" color="gray.500">
+            Software Engineer
+          </Text>
+        </VStack>
+
+        {/* Navigation Links */}
+        <List spacing={1} w="full">
+          <ListItem display="flex" alignItems="center">
+            <ListIcon as={FcAbout} boxSize={5} mr={2} />
+            <NavItem name="About" route="/" activeItem={activeItem} />
           </ListItem>
-          <ListItem whiteSpace="nowrap">
-            <a href={resume} download="Adekunle's Resume.pdf">
-              <ListIcon as={GiTie} color="blue.500" />
+          <ListItem display="flex" alignItems="center" px={4} py={2.5} borderRadius="md" _hover={{ bg: useColorModeValue("gray.100", "whiteAlpha.100") }}>
+            <ListIcon as={GiTie} color="blue.500" boxSize={5} mr={2} />
+            <a href={resume} download="Adekunle_James_Professional_Resume.pdf" style={{ width: "100%", fontWeight: 500 }}>
               Download Resume
             </a>
           </ListItem>
-          <ListItem>
-            <ListIcon as={BsBook} color="blue.500" />
-            <NavItem
-              setActiveItem={setActiveItem}
-              name="Education"
-              route="/education"
-              activeItem={activeItem}
-            />
+          <ListItem display="flex" alignItems="center">
+            <ListIcon as={BsBook} color="blue.500" boxSize={5} mr={2} />
+            <NavItem name="Education" route="/education" activeItem={activeItem} />
           </ListItem>
-          <ListItem>
-            <ListIcon as={MdCheckCircle} color="blue.500" />
-            <NavItem
-              setActiveItem={setActiveItem}
-              name="Projects"
-              route="/projects"
-              activeItem={activeItem}
-            />
+          <ListItem display="flex" alignItems="center">
+            <ListIcon as={MdCheckCircle} color="blue.500" boxSize={5} mr={2} />
+            <NavItem name="Projects" route="/projects" activeItem={activeItem} />
           </ListItem>
-          <ListItem>
-            <ListIcon as={MdSettings} color="blue.500" />
-            <NavItem
-              setActiveItem={setActiveItem}
-              name="Services"
-              route="/services"
-              activeItem={activeItem}
-            />
+          <ListItem display="flex" alignItems="center">
+            <ListIcon as={MdSettings} color="blue.500" boxSize={5} mr={2} />
+            <NavItem name="Services" route="/services" activeItem={activeItem} />
           </ListItem>
-          <ListItem whiteSpace="nowrap">
-            <ListIcon as={GoLocation} color="blue.500" />
-            <NavItem
-              setActiveItem={setActiveItem}
-              name="Lagos, Nigeria"
-              route="#"
-              activeItem={activeItem}
-            />
+          <ListItem display="flex" alignItems="center" px={4} py={2.5}>
+            <ListIcon as={GoLocation} color="blue.500" boxSize={5} mr={2} />
+            <Text fontSize="sm" color="gray.500" fontWeight="medium">Lagos, Nigeria</Text>
           </ListItem>
-          <ListItem>
+          <ListItem display="flex" alignItems="center" px={2}>
             <Button
-              whiteSpace="normal"
-              name="Email"
-              textAlign="left"
-              onClick={() => {
-                window.open("mailto:kunlele.kunzy@gmail.com");
-              }}
+              leftIcon={<MdEmail />}
+              colorScheme="blue"
               variant="link"
-              fontSize="lg"
+              fontSize="sm"
+              fontWeight="medium"
+              onClick={() => window.open("mailto:kunlele.kunzy@gmail.com")}
             >
-              <ListIcon as={MdEmail} color="blue.500" />
               kunlele.kunzy@gmail.com
             </Button>
           </ListItem>
-          <Heading as="h1" fontSize="2xl">
-            Socials
+        </List>
+
+        {/* Socials Footer */}
+        <VStack spacing={2} w="full" pt={4} borderTop="1px solid" borderColor={borderColor}>
+          <Heading as="h2" fontSize="sm" textTransform="uppercase" letterSpacing="wider" color="gray.400">
+            Connect
           </Heading>
-          <HStack
-            justify="space-around"
-            margin="auto"
-            paddingY={5}
-            paddingRight={5}
-            color="blue.500"
-          >
-            <Link
-              href="https://www.linkedin.com/in/adekunle-abowaba-09a2701b4/"
-              target="__blank"
-              aria-label="LinkedIn"
-            >
-              <AiFillLinkedin className="w-8 h-8 cursor-pointer" />
+          <HStack spacing={4} pt={1} color="blue.500">
+            <Link href="https://www.linkedin.com/in/adekunle-abowaba-09a2701b4/" target="_blank" aria-label="LinkedIn">
+              <AiFillLinkedin size={24} />
             </Link>
-            <Link
-              href="https://github.com/jaysofty?tab=repositories"
-              target="__blank"
-              aria-label="GitHub"
-            >
-              <AiFillGithub className="w-8 h-8 cursor-pointer" />
+            <Link href="https://github.com/jaysofty?tab=repositories" target="_blank" aria-label="GitHub">
+              <AiFillGithub size={24} />
             </Link>
-            <Link href="https://twitter.com/jaysofty_" target="__blank">
-              <AiFillTwitterCircle
-                className="cursor-pointer"
-                aria-label="twitter"
-              />
+            <Link href="https://twitter.com/jaysofty_" target="_blank" aria-label="Twitter">
+              <AiFillTwitterCircle size={24} />
             </Link>
           </HStack>
-        </List>
-      </motion.div>
-    </>
+        </VStack>
+      </VStack>
+    </Box>
   );
 };
 

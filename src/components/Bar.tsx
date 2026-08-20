@@ -1,35 +1,24 @@
 import { motion } from "framer-motion";
-import { Progress, SimpleGrid } from "@chakra-ui/react";
+import { Progress, Box, Text, HStack } from "@chakra-ui/react";
 import { ISkill } from "./types";
 
+const MotionBox = motion(Box);
+
 const Bar: React.FC<{ data: ISkill }> = ({ data: { level, name } }) => {
-  const variants = {
-    initial: {
-      width: 0,
-    },
-    animate: {
-      width: level,
-      transition: {
-        duration: 0.4,
-        type: "spring",
-        damping: 10,
-        stiffness: 100,
-      },
-    },
-  };
   return (
-    <SimpleGrid columns={3} spacing={10} padding="10px">
-      <motion.div
-        className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-green to-blue-600"
-        style={{ width: level }}
-        initial="initial"
-        animate="animate"
-        variants={variants}
+    <Box w="full" py={2}>
+      <HStack justify="space-between" mb={1}>
+        <Text fontWeight="semibold" fontSize="sm">{name}</Text>
+        <Text fontSize="xs" color="gray.500">{level}%</Text>
+      </HStack>
+      <MotionBox
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <Progress hasStripe value={level} />
-        {name}
-      </motion.div>
-    </SimpleGrid>
+        <Progress hasStripe value={level} colorScheme="blue" borderRadius="full" size="sm" />
+      </MotionBox>
+    </Box>
   );
 };
 

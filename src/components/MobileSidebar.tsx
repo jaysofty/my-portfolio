@@ -3,8 +3,8 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerBody,
+  DrawerCloseButton,
 } from "@chakra-ui/react";
-
 import AsideList from "./AsideList";
 
 interface MobileSidebarProps {
@@ -17,9 +17,10 @@ export default function MobileSidebar({
   onClose,
 }: MobileSidebarProps) {
   return (
-    <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="xs">
       <DrawerOverlay />
       <DrawerContent>
+        <DrawerCloseButton zIndex="banner" />
         <DrawerBody p={0}>
           <AsideList />
         </DrawerBody>

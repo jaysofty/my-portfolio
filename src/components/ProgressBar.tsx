@@ -1,54 +1,23 @@
-import { Progress, SimpleGrid, Box } from "@chakra-ui/react";
+import { SimpleGrid, Box } from "@chakra-ui/react";
+import Bar from "./Bar";
 
 const ProgressBar = () => {
-  const skill = [
-    {
-      name: "JavaScript",
-      level: 90,
-      //Icon: BsCircleFill,
-    },
-    {
-      name: "React",
-      level: 80,
-      //  Icon: BsCircleFill,
-    },
-    // {
-    //   name: "React Native",
-    //   level: "80%",
-    //   Icon: BsCircleFill,
-    // },
-    // {
-    //   name: "Dart",
-    //   level: "65%",
-    //   Icon: BsCircleFill,
-    // },
-    {
-      name: "Python",
-      level: 50,
-      // Icon: BsCircleFill,
-    },
-    {
-      name: "TypeScript",
-      level: 40,
-      // Icon: BsCircleFill,
-    },
-    {
-      name: "Nodejs",
-      level: 50,
-      //Icon: BsCircleFill,
-    },
+  const skills = [
+    { name: "JavaScript", level: 90 },
+    { name: "React", level: 80 },
+    { name: "Python", level: 50 },
+    { name: "TypeScript", level: 40 },
+    { name: "Node.js", level: 50 },
   ];
+
   return (
-    <>
-      {skill.map((ski) => {
-        <SimpleGrid columns={3} spacing={10} padding="10px">
-          <Box>
-            {ski.name}: <Progress hasStripe value={ski.level} />
-          </Box>
-        </SimpleGrid>;
-      })}
-      ;
-    </>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full" py={4}>
+      {skills.map((skill, index) => (
+        <Box key={index}>
+          <Bar data={skill} />
+        </Box>
+      ))}
+    </SimpleGrid>
   );
 };
 

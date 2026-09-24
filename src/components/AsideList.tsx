@@ -18,7 +18,7 @@ import { FcAbout } from "react-icons/fc";
 import { BsBook } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { GiTie } from "react-icons/gi";
-import resume from "../assets/Adekunle_James_Professional_Resume.pdf";
+import resume from "../assets/Adekunle_James_ATS_Professional_CV.pdf";
 import { motion } from "framer-motion";
 import avatar from "../assets/avatar.jpg";
 import {

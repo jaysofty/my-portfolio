@@ -6,6 +6,7 @@ import makeup_port_folio from "./assets/makeup_logo.png";
 import ai_expense from "./assets/claimFlow.png"
 import dog_nation from "./assets/dog_nation.png"
 import news_dashboard from "./assets/news_dashboard.png"
+import ai_assistant  from "./assets/ai_assistant.png"
 export const about = [
   {
     id: 1,
@@ -117,6 +118,19 @@ export const projects = [
     image_path: makeup_port_folio,
     github_url:  "https://github.com/jaysofty/makeup-portfolio",
     live_url: "https://makeup-portfolio-kohl.vercel.app/",
+  
+  },
+
+
+    {
+    id: 6,
+    name: "Ai-gift-assistant-app",
+    description:
+      "AI-powered gift recommendation app that generates thoughtful, personalized gift ideas using OpenRouter, Node.js, and JavaScript.",
+    category: "Vite, ReactJs, Javascript, OpenRouter, OpenAI SDK && Html & CSS",
+    image_path: ai_assistant,
+    github_url:  "https://github.com/jaysofty/ai-gift-assistant-app/",
+    live_url: "https://ai-gift-assistant-app.vercel.app/",
   
   },
 ];

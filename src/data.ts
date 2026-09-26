@@ -7,6 +7,7 @@ import ai_expense from "./assets/claimFlow.png"
 import dog_nation from "./assets/dog_nation.png"
 import news_dashboard from "./assets/news_dashboard.png"
 import ai_assistant  from "./assets/ai_assistant.png"
+import ai_movie from "./assets/ai_movie.png"
 export const about = [
   {
     id: 1,
@@ -133,4 +134,18 @@ export const projects = [
     live_url: "https://ai-gift-assistant-app.vercel.app/",
   
   },
+
+      {
+    id: 7,
+    name: "Ai-movie-recommendation-app",
+    description:
+      "A full-stack AI movie recommendation app built with React, Express, Supabase pgvector, Hugging Face embeddings, and Groq.",
+    category: "Vite, ReactJs, Javascript, CSS",
+    image_path: ai_movie,
+    github_url:  "https://github.com/jaysofty/ai-movie-recommendation-app",
+    live_url: "https://ai-movie-recommendation-app-git-master-jaysoftys-projects.vercel.app/",
+  
+  },
 ];
+
+

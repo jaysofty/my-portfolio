@@ -143,7 +143,7 @@ export const projects = [
     category: "Vite, ReactJs, Javascript, CSS",
     image_path: ai_movie,
     github_url:  "https://github.com/jaysofty/ai-movie-recommendation-app",
-    live_url: "https://ai-movie-recommendation-app-git-master-jaysoftys-projects.vercel.app/",
+    live_url: "https://ai-movie-recommendation-app-beta.vercel.app",
   
   },
 ];

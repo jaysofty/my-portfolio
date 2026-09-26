@@ -18,7 +18,7 @@ import { FcAbout } from "react-icons/fc";
 import { BsBook } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { GiTie } from "react-icons/gi";
-import resume from "../assets/Adekunle_James_ATS_Professional_CV.pdf";
+import resume from "../assets/Abowaba_Adekunle_James_CV.pdf";
 import { motion } from "framer-motion";
 import avatar from "../assets/avatar.jpg";
 import {
@@ -133,7 +133,7 @@ const AsideList = () => {
           </ListItem>
           <ListItem display="flex" alignItems="center" px={4} py={2.5} borderRadius="md" _hover={{ bg: useColorModeValue("gray.100", "whiteAlpha.100") }}>
             <ListIcon as={GiTie} color="blue.500" boxSize={5} mr={2} />
-            <a href={resume} download="Adekunle_James_ATS_Professional_CV.pdf" style={{ width: "100%", fontWeight: 500 }}>
+            <a href={resume} download="Abowaba_Adekunle_James_CV.pdf" style={{ width: "100%", fontWeight: 500 }}>
               Download Resume
             </a>
           </ListItem>

@@ -72,59 +72,8 @@ export const skill = [
 export const projects = [
   
 
-  {
+    {
     id: 1,
-    name: "AI Expense Tracker System",
-    description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
-    category: "Next.js",
-    image_path: ai_expense,
-    live_url: "https://expense-tracker-system-six.vercel.app/",
-    github_url: "https://github.com/jaysofty/expense_tracker_system",
-  },
-
-    {
-    id: 2,
-    name: "Dog Marketplace",
-    description: "Discover dogs from trusted sellers across Nigeria. Browse quality listings, connect with sellers, and find the perfect companion for your family.",
-    category: "Next.js",
-    image_path: dog_nation,
-    live_url: "https://dogs-nation.vercel.app/",
-    github_url: "https://github.com/jaysofty/dogs_nation",
-  },
-    {
-    id: 3,
-    name: "News Application",
-    description: "allows users to view, search, create, update, and delete news articles through a simple and professional dashboard.",
-    category: "Next.js",
-    image_path: news_dashboard,
-    live_url: "https://news-application-lake-nine.vercel.app/",
-    github_url: "https://github.com/jaysofty/news-application",
-  },
-  {
-    id: 4,
-    name: "Reusable UI login and dashboard page",
-    description:
-      "This is a Demo UI that consist of a login page, settings page and a dashboard fully responsive no authentication has been applied login and enjoy the view.",
-    category: "Nextjs",
-    image_path: tech_crush_ui,
-    live_url: "https://reusable-ui-zeta.vercel.app/dashboard/settings",
-     github_url: "https://github.com/jaysofty/reusable-ui",
-  },
-  {
-    id: 5,
-    name: "Makeup and Gele Website",
-    description:
-      "Simple Makeup portfolio showcasing artistry",
-    category: "ReactJs && Typescript",
-    image_path: makeup_port_folio,
-    github_url:  "https://github.com/jaysofty/makeup-portfolio",
-    live_url: "https://makeup-portfolio-kohl.vercel.app/",
-  
-  },
-
-
-    {
-    id: 6,
     name: "Ai-gift-assistant-app",
     description:
       "AI-powered gift recommendation app that generates thoughtful, personalized gift ideas using OpenRouter, Node.js, and JavaScript.",
@@ -136,7 +85,7 @@ export const projects = [
   },
 
       {
-    id: 7,
+    id: 2,
     name: "Ai-movie-recommendation-app",
     description:
       "A full-stack AI movie recommendation app built with React, Express, Supabase pgvector, Hugging Face embeddings, and Groq.",
@@ -146,6 +95,58 @@ export const projects = [
     live_url: "https://ai-movie-recommendation-app-beta.vercel.app",
   
   },
+    {
+    id: 3,
+    name: "Dog Marketplace",
+    description: "Discover dogs from trusted sellers across Nigeria. Browse quality listings, connect with sellers, and find the perfect companion for your family.",
+    category: "Next.js",
+    image_path: dog_nation,
+    live_url: "https://dogs-nation.vercel.app/",
+    github_url: "https://github.com/jaysofty/dogs_nation",
+  },
+   
+     {
+    id: 4,
+    name: "AI Expense Tracker System",
+    description: "Next.js Expense AI tracker with Azure Document Intelligence, Neon DB. Receipt gets uploaded and data gets analyzed and extracted for approval or rejection.",
+    category: "Next.js",
+    image_path: ai_expense,
+    live_url: "https://expense-tracker-system-six.vercel.app/",
+    github_url: "https://github.com/jaysofty/expense_tracker_system",
+  },
+   {
+    id: 5,
+    name: "News Application",
+    description: "allows users to view, search, create, update, and delete news articles through a simple and professional dashboard.",
+    category: "Next.js",
+    image_path: news_dashboard,
+    live_url: "https://news-application-lake-nine.vercel.app/",
+    github_url: "https://github.com/jaysofty/news-application",
+  },
+  {
+    id: 6,
+    name: "Reusable UI login and dashboard page",
+    description:
+      "This is a Demo UI that consist of a login page, settings page and a dashboard fully responsive no authentication has been applied login and enjoy the view.",
+    category: "Nextjs",
+    image_path: tech_crush_ui,
+    live_url: "https://reusable-ui-zeta.vercel.app/dashboard/settings",
+     github_url: "https://github.com/jaysofty/reusable-ui",
+  },
+  {
+    id: 7,
+    name: "Makeup and Gele Website",
+    description:
+      "Simple Makeup portfolio showcasing artistry",
+    category: "ReactJs && Typescript",
+    image_path: makeup_port_folio,
+    github_url:  "https://github.com/jaysofty/makeup-portfolio",
+    live_url: "https://makeup-portfolio-kohl.vercel.app/",
+  
+  },
+
+
+
 ];
 
 

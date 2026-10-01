@@ -9,7 +9,6 @@ import {
   HStack,
   Link,
   List,
-  ListIcon,
   ListItem,
   Text,
   VStack,
